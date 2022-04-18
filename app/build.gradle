@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'kotlin-kapt'
 
 android {
 
@@ -37,7 +39,14 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':navigator')
+
+
     def commonDependencies = rootProject.extensions.getByName("ext").commonDependencies
 
     implementation commonDependencies.google.material
+
+    // Hilt
+    implementation commonDependencies.google.hiltAndroid
+    kapt commonDependencies.google.hiltCompiler
 }

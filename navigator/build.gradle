@@ -1,9 +1,13 @@
 apply from: "$rootDir/buildsystem/android-library.gradle"
 
-android {}
+android {
+}
 
 dependencies {
     def dependencies = rootProject.ext.commonDependencies
 
     implementation dependencies.androidx.appcompat
+
+    implementation dependencies.google.composeActivities
+    implementation dependencies.google.composeMaterial
 }

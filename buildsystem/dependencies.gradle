@@ -14,6 +14,18 @@ ext {
 
     hiltVersion = '2.41'
 
+    // Compose
+    kotlinCompilerExtensionVersion = '1.1.0'
+    composeActivites = '1.4.0'
+    composeMaterial = '1.1.1'
+    composeAnimation = '1.1.1'
+    composeToolingSupport = '1.1.1'
+    composePreview = "1.1.0"
+    composeConstraint = '1.0.0'
+    composeViewModels = '2.4.1'
+    androidTestImplementation = '1.1.1'
+    flowLayout = '0.23.1'
+    composeRuntime = '1.1.1'
 
     android = [
             minSdkVersion    : minSdkVersion,
@@ -31,12 +43,27 @@ ext {
                     constraintLayout: "androidx.constraintlayout:constraintlayout:${constraintLayout}"
             ],
             google  : [
-                    material        : "com.google.android.material:material:${material}",
+                    material                        : "com.google.android.material:material:${material}",
 
                     //Hilt
-                    hiltGradlePlugin: "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion",
-                    hiltAndroid     : "com.google.dagger:hilt-android:${hiltVersion}",
-                    hiltCompiler    : "com.google.dagger:hilt-android-compiler:${hiltVersion}",
+                    hiltGradlePlugin                : "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion",
+                    hiltAndroid                     : "com.google.dagger:hilt-android:${hiltVersion}",
+                    hiltCompiler                    : "com.google.dagger:hilt-android-compiler:${hiltVersion}",
+
+                    // Compose
+                    composeActivities               : "androidx.activity:activity-compose:${composeActivites}",
+                    composeUiTestManifest           : "androidx.compose.ui:ui-test-manifest:${composeRuntime}",
+                    composeMaterial                 : "androidx.compose.material:material:${composeMaterial}",
+                    composeAnimation                : "androidx.compose.animation:animation:${composeAnimation}",
+                    composeToolingSupport           : "androidx.compose.ui:ui-tooling:${composeToolingSupport}",
+                    composePreview                  : "androidx.compose.ui:ui-tooling-preview:${composeConstraint}",
+                    composeConstraint               : "androidx.constraintlayout:constraintlayout-compose:${composeConstraint}",
+                    composeViewModels               : "androidx.lifecycle:lifecycle-viewmodel-compose:${composeViewModels}",
+                    flowLayout                      : "com.google.accompanist:accompanist-flowlayout:${flowLayout}",
+                    composeRuntime                  : "androidx.compose.runtime:runtime:${composeRuntime}",
+                    composeRunTimeLiveData          : "androidx.compose.runtime:runtime-livedata:${composeRuntime}",
+                    composeAndroidTestImplementation: "androidx.compose.ui:ui-test-junit4:${androidTestImplementation}",
+                    composeUiJunit                  : "androidx.compose.ui:ui-test-junit4:${composeRuntime}",
             ],
             test    : []
     ]

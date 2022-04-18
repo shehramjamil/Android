@@ -33,6 +33,14 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = rootProject.ext.kotlinCompilerExtensionVersion
+    }
 }
 
 dependencies {
@@ -41,6 +49,7 @@ dependencies {
     implementation dependencies.androidx.core
     implementation dependencies.androidx.corektx
 
+    // Hilt
     implementation dependencies.google.hiltAndroid
     kapt dependencies.google.hiltCompiler
 
