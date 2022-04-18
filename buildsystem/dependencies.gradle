@@ -1,17 +1,21 @@
 ext {
+    // Gradle
+    buildGradleVersion = '7.1.3'
+    kotlinGradlePlugin = '1.6.10'
 
+    // Build Script
     minSdkVersion = 28
     targetSdkVersion = 31
     compileSdkVersion = 31
     versionName = "1.0"
     versionCode = 1
 
-
     androidXAppCompat = '1.4.1'
     androidXCore = '1.7.0'
     constraintLayout = '2.1.3'
     material = '1.5.0'
 
+    // DI
     hiltVersion = '2.41'
 
     // Compose
@@ -36,6 +40,11 @@ ext {
     ]
 
     commonDependencies = [
+            gradle  : [
+                    buildGradleVersion: "com.android.tools.build:gradle:${buildGradleVersion}",
+                    kotlinGradlePlugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinGradlePlugin}"
+
+            ],
             androidx: [
                     appcompat       : "androidx.appcompat:appcompat:${androidXAppCompat}",
                     core            : "androidx.core:core:${androidXCore}",
