@@ -1,8 +1,6 @@
 package com.android.navigator
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -14,8 +12,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.android.core.BaseActivity
 
-class NavigatorActivity : AppCompatActivity(R.layout.activity_navigator) {
+class NavigatorActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -42,7 +41,7 @@ class NavigatorActivity : AppCompatActivity(R.layout.activity_navigator) {
     }
 
     private fun onFeatureClick(featureName: String) {
-        Toast.makeText(this, featureName, Toast.LENGTH_SHORT).show()
+        showToast(featureName)
     }
 
     companion object {

@@ -1,12 +1,10 @@
 apply from: "$rootDir/buildsystem/android-library.gradle"
 
-android {}
+android {
+}
 
 dependencies {
-    implementation project(path: ':core')
-
     def dependencies = rootProject.ext.commonDependencies
 
     implementation dependencies.androidx.appcompat
-    implementation dependencies.androidx.constraintLayout
 }
