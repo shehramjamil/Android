@@ -13,8 +13,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.android.core.BaseActivity
+import com.android.core.intents.NavigationComponentActivityIntent
 
 class NavigatorActivity : BaseActivity() {
+    override val layoutId: Int
+        get() = R.layout.activity_navigator
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -41,11 +45,11 @@ class NavigatorActivity : BaseActivity() {
     }
 
     private fun onFeatureClick(featureName: String) {
-        showToast(featureName)
+        startActivity(NavigationComponentActivityIntent.createIntent(this))
     }
 
     companion object {
-        private val listOfFeatureModules = listOf("Clean Architecture Implementation", "Retrofit Implementation")
+        private val listOfFeatureModules =
+            listOf("Clean Architecture Implementation", "Retrofit Implementation")
     }
-
 }

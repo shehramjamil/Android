@@ -1,7 +1,7 @@
 ext {
     // Gradle
     buildGradleVersion = '7.1.3'
-    kotlinGradlePlugin = '1.6.10'
+    kotlinGradlePlugin = '1.7.20'
 
     // Build Script
     minSdkVersion = 28
@@ -18,8 +18,11 @@ ext {
     // DI
     hiltVersion = '2.41'
 
+    //Navigation
+    nav_version = "2.5.3"
+
     // Compose
-    kotlinCompilerExtensionVersion = '1.1.0'
+    kotlinCompilerExtensionVersion = '1.3.2'
     composeActivites = '1.4.0'
     composeMaterial = '1.1.1'
     composeAnimation = '1.1.1'
@@ -30,6 +33,9 @@ ext {
     androidTestImplementation = '1.1.1'
     flowLayout = '0.23.1'
     composeRuntime = '1.1.1'
+
+    // viewBinding delegate
+    viewBindingDelegate = '1.5.6'
 
     android = [
             minSdkVersion    : minSdkVersion,
@@ -49,7 +55,10 @@ ext {
                     appcompat       : "androidx.appcompat:appcompat:${androidXAppCompat}",
                     core            : "androidx.core:core:${androidXCore}",
                     corektx         : "androidx.core:core-ktx:${androidXCore}",
-                    constraintLayout: "androidx.constraintlayout:constraintlayout:${constraintLayout}"
+                    constraintLayout: "androidx.constraintlayout:constraintlayout:${constraintLayout}",
+                    navigation      : "androidx.navigation:navigation-fragment-ktx:$nav_version",
+                    navigationUI    : "androidx.navigation:navigation-ui-ktx:$nav_version",
+                    safeNav         : "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
             ],
             google  : [
                     material                        : "com.google.android.material:material:${material}",
@@ -73,6 +82,9 @@ ext {
                     composeRunTimeLiveData          : "androidx.compose.runtime:runtime-livedata:${composeRuntime}",
                     composeAndroidTestImplementation: "androidx.compose.ui:ui-test-junit4:${androidTestImplementation}",
                     composeUiJunit                  : "androidx.compose.ui:ui-test-junit4:${composeRuntime}",
+            ],
+            other   : [
+                    viewBindingDelegate: "com.github.kirich1409:viewbindingpropertydelegate:${viewBindingDelegate}"
             ],
             test    : []
     ]

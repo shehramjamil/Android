@@ -16,3 +16,4 @@ rootProject.name = "Android"
 include ':app'
 include ':navigator'
 include ':core'
+include ':navigation-components'

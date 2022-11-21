@@ -1,0 +1,13 @@
+<resources>
+    <string name="hello_blank_fragment_a">Hello blank fragment a</string>
+    <string name="hello_blank_fragment_b">Hello blank fragment b</string>
+    <string name="hello_blank_fragment_b1">Hello blank fragment b1</string>
+    <string name="hello_blank_fragment_c">Hello blank fragment c</string>
+    <string name="hello_blank_fragment_c1">Hello blank fragment c1</string>
+    <string name="hello_blank_fragment_general">Hello blank fragment general</string>
+    <string name="hello_blank_fragment_dialogue">Hello blank fragment dialogue</string>
+    <string name="menu_item_1">Menu Item 1</string>
+    <string name="bottom_nav_menu_A">A</string>
+    <string name="bottom_nav_menu_B">B</string>
+    <string name="bottom_nav_menu_C">C</string>
+</resources>

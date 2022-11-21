@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/fragmentA">
+
+    <include app:graph="@navigation/navigation_b" />
+    <include app:graph="@navigation/navigation_c" />
+
+
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="com.example.navigation_components.a.FragmentA"
+        android:label="Starting Destination A"
+        tools:layout="@layout/fragment_a">
+        <action
+            android:id="@+id/action_fragmentA_to_generalFragment"
+            app:destination="@id/generalFragment">
+            <!--Following argument overrides the argument defined in generalFragment - See overriding a destination argument in documentation-->
+            <argument
+                android:name="generaLInteger"
+                android:defaultValue="1"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_fragmentA_to_dialogueFragment"
+            app:destination="@id/dialogueFragment" />
+        <action
+            android:id="@+id/action_fragmentA_to_navigation_b"
+            app:destination="@id/navigation_b" />
+        <action
+            android:id="@+id/action_fragmentA_to_navigation_c"
+            app:destination="@id/navigation_c" />
+    </fragment>
+    <fragment
+        android:id="@+id/generalFragment"
+        android:name="com.example.navigation_components.GeneralFragment"
+        android:label="GeneralFragment"
+        tools:layout="@layout/fragment_b">
+        <!--arguments also support enums, serializable, parcelable. See the documentation-->
+        <argument
+            android:name="generalString"
+            android:defaultValue="General String"
+            app:argType="string" />
+        <argument
+            android:name="generaLInteger"
+            android:defaultValue="1"
+            app:argType="integer" />
+        <argument
+            android:name="intArray"
+            app:argType="integer[]"
+            app:nullable="true" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogueFragment"
+        android:name="com.example.navigation_components.DialogueFragment"
+        android:label="DialogueFragment" />
+
+    <!--Global action-->
+    <!--android:id="@+id/main_navigation"  in the main navigation graph is used to generate an action for safe arguments-->
+    <action
+        android:id="@+id/action_global_fragmentA"
+        app:destination="@id/fragmentA" />
+
+    <fragment
+        android:id="@+id/menuFragment1"
+        android:name="com.example.navigation_components.menu.MenuFragment1"
+        android:label="MenuFragment1" />
+
+</navigation>

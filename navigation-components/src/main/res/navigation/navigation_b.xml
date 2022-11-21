@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_b"
+    app:startDestination="@id/fragmentB">
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="com.example.navigation_components.b.FragmentB"
+        android:label="FragmentB">
+        <action
+            android:id="@+id/action_fragmentB_to_fragmentB1"
+            app:destination="@id/fragmentB1" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentB1"
+        android:name="com.example.navigation_components.b.FragmentB1"
+        android:label="FragmentB1">
+        <deepLink app:uri="fragmentB1://www.example.com/users/{arg1}?arg2={arg2}" />
+        <argument
+            android:name="arg1"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <argument
+            android:name="arg2"
+            app:argType="integer"
+            android:defaultValue="2" />
+    </fragment>
+</navigation>

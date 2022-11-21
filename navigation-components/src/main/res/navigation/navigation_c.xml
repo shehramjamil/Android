@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_c"
+    app:startDestination="@id/fragmentC">
+    <fragment
+        android:id="@+id/fragmentC"
+        android:name="com.example.navigation_components.c.FragmentC"
+        android:label="FragmentC"
+        tools:layout="@layout/fragment_c">
+        <action
+            android:id="@+id/action_fragmentC_to_fragmentC1"
+            app:destination="@id/fragmentC1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentC1"
+        android:name="com.example.navigation_components.c.FragmentC1"
+        android:label="FragmentC1"
+        tools:layout="@layout/fragment_c1">
+        <!--URI without scheme are considered as either http or https-->
+        <!--placeholder ->  {argName} = argName is replaced with the real argument for this destination otherwise a default String type will be used for argument value -->
+        <!--URI path parameters have to match totally with the deeplink defined in destination fragment-->
+        <!--URI query parameters defined in destination does not need to match fully with the triggered deeplink-->
+        <!--Extraneous query parameters from the triggered deeplink also do not affect the URI matching in the destination fragment uri-->
+        <!--Priority  1.uri  2.action  3.mimeType-->
+        <!--Since query parameters does not affect the matching of deep links but along with deleting the query parameter, its placeholder arg should also be removed-->
+        <deepLink
+            app:uri="http://www.example.com/users/{arg1}?arg2={arg2}"
+            app:action="android.intent.action.fragment_c1"
+            app:mimeType="type/subtype" />
+        <argument
+            android:name="arg1"
+            app:argType="integer"
+            />
+        <argument
+            android:name="arg2"
+            app:argType="integer"
+        />
+    </fragment>
+</navigation>
